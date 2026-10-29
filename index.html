@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Gerador de QR code para URLs.">
+  <title>QR · URL</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <h1>qr</h1>
+    </header>
+
+    <form class="field" id="form" autocomplete="off">
+      <label for="url" class="sr-only">URL</label>
+      <input id="url" type="url" inputmode="url" placeholder="https://" spellcheck="false" autofocus>
+    </form>
+
+    <figure class="preview" id="preview" data-empty>
+      <div class="qr" id="qr"></div>
+      <span class="placeholder logo" aria-hidden="true"></span>
+    </figure>
+
+    <p class="hint" id="hint" aria-live="polite"></p>
+
+    <div class="options">
+      <label class="toggle">
+        <input type="checkbox" id="withIcon" checked>
+        <span>ícone no centro</span>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="png" disabled>png</button>
+      <button type="button" id="svg" disabled>svg</button>
+      <button type="button" id="copy" disabled>copiar</button>
+    </div>
+  </main>
+
+  <script src="vendor/qrcode.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
